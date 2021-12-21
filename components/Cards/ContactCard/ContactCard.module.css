@@ -1,0 +1,40 @@
+.contactCard {
+  margin-bottom: 2rem;
+}
+
+.contactCard > h2 {
+  color: var(--grey-700);
+  margin-bottom: 1.5rem;
+}
+
+.contactCard table tr {
+  display: flex;
+  margin-bottom: 1rem;
+  color: var(--grey-500);
+  font-weight: 500;
+}
+
+.contactCard table tr :first-child {
+  min-width: 5.5rem;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .contactCard > :nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contactCard table tr :first-child {
+    margin-right: 2rem;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+  .contactCard > :nth-child(2) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

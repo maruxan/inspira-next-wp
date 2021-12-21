@@ -1,6 +1,13 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
+body {
+  font-family: var(--font-primary);
+  background-color: var(--white);
+  color: var(--black);
+  max-width: 100rem;
+  margin: 0 auto;
+}
 
 /* Start purging... */
 @tailwind components;

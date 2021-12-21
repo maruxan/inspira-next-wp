@@ -1,0 +1,22 @@
+.sectionHeader {
+  font-family: var(--font-primary);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.dark {
+  color: var(--black);
+}
+
+.light {
+  color: var(--white);
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .sectionHeader {
+    font-size: var(--text-5xl);
+  }
+}

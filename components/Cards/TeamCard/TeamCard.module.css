@@ -1,0 +1,30 @@
+.teamCard > * {
+  margin-bottom: 1rem;
+}
+
+.teamCard > img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.teamCard > h2 {
+  font-size: var(--text-xl);
+}
+
+.teamCard > h2 + div {
+  color: var(--grey-700);
+  font-weight: 600;
+  font-size: var(--text-base);
+}
+
+.teamCard > :last-child {
+  display: flex;
+}
+
+.teamCard > :last-child > * {
+  font-size: var(--text-3xl);
+}
+
+.teamCard > :last-child > :not(:last-child) {
+  margin-right: 1rem;
+}

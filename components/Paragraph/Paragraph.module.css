@@ -1,0 +1,15 @@
+.paragraph {
+  font-family: var(--ff-primary);
+  font-size: var(--text-lg);
+  line-height: 1.4;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.dark {
+  color: var(--grey-500);
+}
+
+.light {
+  color: var(--white);
+}

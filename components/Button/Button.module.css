@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button > * {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.button > span {
+  margin-right: 1rem;
+  text-transform: capitalize;
+}
+
+.dark {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.light {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 1rem 0;
+}
