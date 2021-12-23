@@ -6,7 +6,8 @@
   padding: 0 var(--container);
 }
 
-.heritage > img {
+.heritageImg {
+  position: relative;
   display: none;
 }
 
@@ -45,6 +46,7 @@
 
   .heritage > :first-child {
     align-self: flex-end;
+    width: 50%;
     max-width: 35rem;
   }
 
@@ -56,7 +58,7 @@
     margin-bottom: 0;
   }
 
-  .heritage > img {
+  .heritageImg {
     display: block;
     width: 50%;
   }

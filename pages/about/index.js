@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 
 import team from '../../data/team';
 import classes from './About.module.css';
@@ -48,7 +49,9 @@ export default function About() {
               Our small team of world-class professionals provides input on every project.
             </Paragraph>
           </div>
-          <img src={heritageImg} alt="metal building" />
+          <div className={classes.heritageImg}>
+            <Image src={heritageImg} alt="edificio de fachada moderna" layout="responsive" />
+          </div>
         </section>
 
         <section className={classes.team}>

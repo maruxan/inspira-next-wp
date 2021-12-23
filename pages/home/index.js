@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import projects from '../../data/projects';
 import classes from './Home.module.css';
@@ -55,7 +56,9 @@ export default function Home() {
             that will stand the test of time.
           </Paragraph>
         </div>
-        <img src={welcomeImg} alt="elegant building" />
+        <div className={classes.welcomeImg}>
+          <Image src={welcomeImg} alt="edificio elegante" layout="fill" />
+        </div>
       </section>
 
       <section className={classes.team}>

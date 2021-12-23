@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { HiOutlineMenuAlt3, HiOutlineX } from 'react-icons/hi';
 
 import classes from './Navbar.module.css';
@@ -17,7 +18,7 @@ export default function Navbar() {
   return (
     <div className={classes.navbar}>
       <Link href="/" className={classes.logo} onClick={() => setIsOpen(false)}>
-        <img src={logo} alt="Arch logo" />
+        <Image src={logo} alt="logo Inspira" />
       </Link>
       <button className={classes.navmenuToggler} onClick={toggleMenuHandler}>
         {isOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}

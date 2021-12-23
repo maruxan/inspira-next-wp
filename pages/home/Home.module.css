@@ -27,7 +27,7 @@
   text-transform: capitalize;
 }
 
-.welcome > img {
+.welcomeImg {
   display: none;
 }
 
@@ -91,10 +91,11 @@
     margin-bottom: 0;
   }
 
-  .welcome > img {
+  .welcomeImg {
+    position: relative;
     display: block;
-    object-fit: cover;
     z-index: -2;
     height: 40rem;
+    width: 30rem;
   }
 }

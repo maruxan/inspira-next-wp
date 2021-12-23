@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 
 import classes from './Contact.module.css';
 
@@ -47,7 +48,7 @@ export default function Contact() {
         </section>
 
         <section className={classes.map}>
-          <img src={mapImg} alt="location map" />
+          <Image src={mapImg} alt="mapa de las oficinas" layout="responsive" />
         </section>
 
         <section className={classes.form}>

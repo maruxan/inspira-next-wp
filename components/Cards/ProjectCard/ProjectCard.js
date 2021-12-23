@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import classes from './ProjectCard.module.css';
 
@@ -6,7 +7,7 @@ export default function ProjectCard({ name, subtitle, img, onclick }) {
   return (
     <article className={classes.projectCard} onClick={onclick}>
       <div className={classes.cardImg}>
-        <img src={img} alt={name} />
+        <Image src={img} alt={name} layout="fill" />
       </div>
       <div className={classes.cardBody}>
         <h1>{name}</h1>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../Button/Button';
 
@@ -12,7 +13,7 @@ export default function Footer() {
   return (
     <footer className={classes.footer}>
       <div className={classes.logo}>
-        <img src={logo} alt="arch logo" />
+        <Image src={logo} alt="logo inspira" />
       </div>
       <nav>
         <li>

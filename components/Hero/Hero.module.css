@@ -19,7 +19,7 @@
     padding: 0 var(--container);
   }
 
-  .hero > img {
+  .heroImg {
     display: none;
   }
 
@@ -40,7 +40,7 @@
     font-size: 9rem;
   }
 
-  .hero > img {
+  .heroImg {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -93,7 +93,7 @@
     height: 120%;
   }
 
-  .hero > img {
+  .heroImg {
     width: 60%;
   }
 }
