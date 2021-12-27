@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Button from '../Button/Button';
 
 import classes from './Footer.module.css';
-import logo from '../../public/images/logo.svg';
+import logo from '../../public/images/inspira_arq_urb.png';
 
 export default function Footer() {
   const router = useRouter();
@@ -13,27 +13,27 @@ export default function Footer() {
   return (
     <footer className={classes.footer}>
       <div className={classes.logo}>
-        <Image src={logo} alt="logo inspira" />
+        <Image src={logo} alt="logo inspira" width={150} height={50} />
       </div>
       <nav>
         <li>
-          <Link href="/posts" className={classes.navlink}>
-            Portfolio
+          <Link href="/">
+            <a className={classes.navlink}>Inicio</a>
           </Link>
         </li>
         <li>
-          <Link href="/about" className={classes.navlink}>
-            About Us
+          <Link href="/about">
+            <a className={classes.navlink}>Sobre Nosotros</a>
           </Link>
         </li>
         <li>
-          <Link href="/contact" className={classes.navlink}>
-            Contact
+          <Link href="/contact">
+            <a className={classes.navlink}>Contacto</a>
           </Link>
         </li>
       </nav>
-      <Button text="see our portfolio" onclick={() => router.push('/posts')} />
-      <span>Arch &#169; 2021</span>
+      <Button text="Casos de Estudio" onclick={() => router.push('/posts')} />
+      <span>Inspira &#169; 2022 | made by Liba</span>
     </footer>
   );
 }
