@@ -26,7 +26,8 @@
 }
 
 .banner h1 {
-  max-width: 30rem;
+  font-size: 2.5rem;
+  max-width: 35rem;
 }
 
 .banner p {
