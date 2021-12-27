@@ -1,6 +1,7 @@
 .button {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1.5rem;
   background-color: transparent;
   border: none;
@@ -14,6 +15,7 @@
 }
 
 .button > span {
+  display: inline-block;
   margin-right: 1rem;
   text-transform: capitalize;
 }
