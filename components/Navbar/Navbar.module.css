@@ -17,7 +17,7 @@
 }
 
 .navlink {
-  font-family: var(--ff-primary);
+  font-family: var(--font-primary);
   text-decoration: none;
   color: var(--grey-500);
   font-weight: 500;

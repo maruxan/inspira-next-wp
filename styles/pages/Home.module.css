@@ -22,7 +22,7 @@
 
 .welcome > svg > text {
   fill: var(--grey-100);
-  font-family: var(--ff-primary);
+  font-family: var(--font-primary);
   font-weight: 700;
   text-transform: capitalize;
 }
