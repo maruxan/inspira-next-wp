@@ -23,7 +23,7 @@
   font-weight: 500;
 }
 
-.active {
+.activeNavlink {
   text-decoration: none;
   color: var(--black);
   font-weight: 600;

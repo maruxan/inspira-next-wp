@@ -11,7 +11,7 @@ export default function Banner({ bgImage, title, bodyText, buttonHandler, button
   return (
     <article className={classes.banner}>
       <div className={classes.bgImage}>
-        <Image src={bgImage} alt={title} layout="fill" />
+        <Image src={bgImage} alt={title} layout="fill" priority />
       </div>
       <SectionHeader color="light">{title}</SectionHeader>
       {bodyText && <Paragraph color="light">{bodyText}</Paragraph>}
