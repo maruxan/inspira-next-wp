@@ -13,7 +13,7 @@ export default function Index({ allPosts: { edges }, preview }) {
       <Head>
         <title>Inspira | Arquitectura y Urbanismo</title>
       </Head>
-      <Home />
+      <Home heroPost={heroPost} morePosts={morePosts} />
       {/* <Intro />
           {heroPost && (
             <HeroPost

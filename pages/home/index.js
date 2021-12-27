@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { formatDateString } from '../../lib/utils';
 
 import projects from '../../data/projects';
 import classes from './Home.module.css';
@@ -16,44 +17,47 @@ import Button from '../../components/Button/Button';
 import welcomeImg from '../../public/images/home/desktop/image-welcome.jpg';
 import teamImg from '../../public/images/home/desktop/image-small-team.jpg';
 
-export default function Home() {
+export default function Home({ heroPost, morePosts }) {
   const router = useRouter();
 
   return (
     <div className={classes.home}>
-      <PageMarker page="home" />
+      <PageMarker page="inicio" />
 
       <section className={classes.hero}>
         <Banner
-          bgImage={projects[0].image}
-          title={projects[0].name}
-          bodyText={projects[0].description}
-          buttonHandler={() => router.push('/posts')}
-          buttonText="See Our Porfolio"
+          bgImage={heroPost.featuredImage?.node.sourceUrl}
+          title={heroPost.title}
+          bodyText={heroPost.excerpt.replace(/<(\/?)p>/g, '')}
+          buttonHandler={() => router.push(`/posts/${heroPost.slug}`)}
+          buttonText="Ver historia"
         />
       </section>
 
       <section className={classes.welcome}>
         <svg viewBox="0 0 79.5 16">
           <text x="0" y="15">
-            welcome
+            inspira
           </text>
         </svg>
         <div>
-          <SectionHeader>Welcome to Arch Studio</SectionHeader>
+          <SectionHeader>
+            Inspira <br />
+            Estar Bien
+          </SectionHeader>
           <Paragraph>
-            Welcome to Arch Studio We have a unique network and skillset to help bring your projects
-            to life. Our small team of highly skilled individuals combined with our large network
-            put us in a strong position to deliver exceptional results.
+            Contiene una misión en sí, es llamado y respuesta, sensibilidad y acción, es la voluntad
+            que busca las formas, la creatividad que transforma lo simple en autentico, lo
+            alternativo adaptado al sistema, el diseño abierto a reconocer aportes con criterios de
+            complementariedad, el estímulo lucido ante la necesidad de un contexto, la dimensión
+            atemporal que se concreta en un tiempo y lugar específico: la actualidad.
           </Paragraph>
           <Paragraph>
-            Over the past 10 years, we have worked on all kinds of projects. From stations to
-            high-rise buildings, we create spaces that inspire and delight.
-          </Paragraph>
-          <Paragraph>
-            We work closely with our clients so that we understand the intricacies of each project.
-            This allows us to work in harmony the surrounding area to create truly stunning projects
-            that will stand the test of time.
+            Es el concepto clave, la búsqueda de uno en el encuentro con el otro, y el respeto por
+            el entorno, reflexión que descubre contenido en el replanteo para flexibilizar con
+            criterios sus fundamentos, es la flecha que da sentido a las infinitas direcciones a las
+            que se puede orientar un segmento en su desarrollo, los vínculos o experiencias son sus
+            recursos, es indicador de horizonte que se hace común, solo cuando deja huellas.
           </Paragraph>
         </div>
         <div className={classes.welcomeImg}>
@@ -64,24 +68,24 @@ export default function Home() {
       <section className={classes.team}>
         <Banner
           bgImage={teamImg}
-          title="Small teams, big ideas"
-          buttonText="about us"
+          title="Equipo pequeño, ideas grandes"
+          buttonText="sobre nosotros"
           buttonHandler={() => router.push('/about')}
         />
       </section>
 
       <section className={classes.featured}>
         <div>
-          <SectionHeader>Featured</SectionHeader>
-          <Button text="see all" onclick={() => router.push('/posts')} />
+          <SectionHeader>Casos de estudio</SectionHeader>
+          <Button text="ver más" onclick={() => router.push('/posts')} />
         </div>
         <Cards>
-          {projects.slice(1, 4).map((project) => (
+          {morePosts.slice(0, 3).map(({ node: project }) => (
             <ProjectCard
-              key={project.id}
-              name={project.name}
-              subtitle="View All Projects"
-              img={project.image}
+              key={project.slug}
+              name={project.title}
+              subtitle={formatDateString(project.date)}
+              img={project.featuredImage?.node.sourceUrl}
               onclick={() => router.push('/posts')}
             />
           ))}
