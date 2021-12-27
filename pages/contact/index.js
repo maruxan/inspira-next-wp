@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import classes from './Contact.module.css';
+import classes from '../../styles/pages/Contact.module.css';
 
 import Layout from '../../components/layout';
 import PageMarker from '../../components/PageMarker/PageMarker';

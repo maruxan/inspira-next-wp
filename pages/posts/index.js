@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import projects from '../../data/projects';
-import classes from './Portfolio.module.css';
+import classes from '../../styles/pages/Portfolio.module.css';
 
 import Layout from '../../components/layout';
 import PageMarker from '../../components/PageMarker/PageMarker';

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import team from '../../data/team';
-import classes from './About.module.css';
+import classes from '../../styles/pages/About.module.css';
 
 import Layout from '../../components/layout';
 import PageMarker from '../../components/PageMarker/PageMarker';
