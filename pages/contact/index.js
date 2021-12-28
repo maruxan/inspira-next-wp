@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
+import team from '../../data/team';
 import classes from '../../styles/pages/Contact.module.css';
 
 import Layout from '../../components/layout';
@@ -9,9 +10,10 @@ import PageMarker from '../../components/PageMarker/PageMarker';
 import Hero from '../../components/Hero/Hero';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import ContactCard from '../../components/Cards/ContactCard/ContactCard';
+import TeamCard from '../../components/Cards/TeamCard/TeamCard';
 
 import heroImg from '../../public/images/contact/desktop/image-hero.jpg';
-import mapImg from '../../public/images/contact/desktop/image-map.png';
+import mapImg from '../../public/images/contact/mapa-inspira.png';
 import Button from '../../components/Button/Button';
 
 export default function Contact() {
@@ -22,28 +24,22 @@ export default function Contact() {
       </Head>
 
       <div className={classes.contact}>
-        <PageMarker page="contact" />
+        <PageMarker page="contacto" />
 
         <Hero
-          page="contact"
+          page="contacto"
           image={heroImg}
-          title="Tell us about your project"
-          text="We’d love to hear more about your project. Please, leave a message below or give us a call. We have two offices, one in Texas and one in Tennessee. If you find yourself nearby, come say hello!"
+          title="Contanos sobre tu proyecto"
+          text="Nuestro desafío es dejar en los diversos productos o servicios que ofrecemos, un aporte socio cultural y a la vez, también a uno mismo, como parte de dicha construcción."
         />
 
         <section className={classes.details}>
-          <SectionHeader>Contact Details</SectionHeader>
+          <SectionHeader>Donde nos encontramos</SectionHeader>
           <ContactCard
-            title="Main Office"
-            mail="archone@mail.com"
-            address="1892 Chenoweth Drive TN"
-            phone="802-456-3451"
-          />
-          <ContactCard
-            title="Office II"
-            mail="archtwo@mail.com"
-            address="3399 Wines Lane TX"
-            phone="832-145-4321"
+            title="Formosa Capital"
+            mail="info@inspirarte.com.ar"
+            address="Hipolito Irigoyen 410 (CP 3600)"
+            phone="+54 (370) 5030 161"
           />
         </section>
 
@@ -51,7 +47,21 @@ export default function Contact() {
           <Image src={mapImg} alt="mapa de las oficinas" layout="responsive" />
         </section>
 
-        <section className={classes.form}>
+        <section className={classes.team}>
+          <SectionHeader>Nuestro equipo</SectionHeader>
+          <div>
+            {team.map((member) => (
+              <TeamCard
+                key={member.id}
+                image={member.image}
+                name={member.name}
+                role={member.role}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* <section className={classes.form}>
           <SectionHeader>Connect with us</SectionHeader>
           <form>
             <input type="text" name="name" placeholder="Name" />
@@ -59,7 +69,7 @@ export default function Contact() {
             <textarea name="message" placeholder="Message"></textarea>
             <Button onclick={(e) => e.preventDefault()} />
           </form>
-        </section>
+        </section> */}
       </div>
     </Layout>
   );
