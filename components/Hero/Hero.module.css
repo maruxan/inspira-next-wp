@@ -24,7 +24,7 @@
   }
 
   .pageName {
-    font-size: var(--text-7xl);
+    font-size: var(--text-6xl);
     padding: 2rem 0;
   }
 }
@@ -37,7 +37,7 @@
   }
 
   .pageName {
-    font-size: 9rem;
+    font-size: var(--text-8xl);
   }
 
   .heroImg {
@@ -85,7 +85,7 @@
 /* DESKTOP */
 @media screen and (min-width: 1024px) {
   .pageName {
-    font-size: 12rem;
+    font-size: 10rem;
   }
 
   .body::before {
