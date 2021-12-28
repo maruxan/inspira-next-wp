@@ -22,12 +22,12 @@ export default function Footer() {
           </Link>
         </li>
         <li>
-          <Link href="/about">
-            <a className={classes.navlink}>Sobre Nosotros</a>
+          <Link href="/servicios">
+            <a className={classes.navlink}>Servicios</a>
           </Link>
         </li>
         <li>
-          <Link href="/contact">
+          <Link href="/contacto">
             <a className={classes.navlink}>Contacto</a>
           </Link>
         </li>

@@ -38,15 +38,15 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            href="/about"
+            href="/servicios"
             activeClassName={classes.activeNavlink}
             onClick={() => setIsOpen(false)}>
-            <a className={classes.navlink}>Sobre Nosotros</a>
+            <a className={classes.navlink}>Servicios</a>
           </NavLink>
         </li>
         <li>
           <NavLink
-            href="/contact"
+            href="/contacto"
             activeClassName={classes.activeNavlink}
             onClick={() => setIsOpen(false)}>
             <a className={classes.navlink}>Contacto</a>

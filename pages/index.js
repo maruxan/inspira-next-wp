@@ -76,9 +76,9 @@ export default function Index({ allPosts: { edges }, preview }) {
         <section className={classes.team}>
           <Banner
             bgImage={teamImg}
-            title="Equipo pequeño, ideas grandes"
-            buttonText="sobre nosotros"
-            buttonHandler={() => router.push('/about')}
+            title="Pequeño equipo, grandes ideas"
+            buttonText="servicios"
+            buttonHandler={() => router.push('/servicios')}
           />
         </section>
 
