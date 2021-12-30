@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { formatDateString } from '../lib/utils';
-import { getAllPostsForHome } from '../lib/api';
+import { getAllPosts } from '../lib/api';
 import Image from 'next/image';
 import Layout from '../components/layout';
 import { CMS_NAME } from '../lib/constants';
@@ -21,7 +21,7 @@ import teamImg from '../public/images/home/desktop/image-small-team.jpg';
 export default function Index({ allPosts: { edges }, preview }) {
   const router = useRouter();
   const heroPost = edges[0]?.node;
-  const morePosts = edges.slice(1);
+  const morePosts = edges.slice(1, 4);
 
   return (
     <Layout preview={preview}>
@@ -88,7 +88,7 @@ export default function Index({ allPosts: { edges }, preview }) {
             <Button text="ver más" onclick={() => router.push('/posts')} />
           </div>
           <Cards>
-            {morePosts.slice(0, 3).map(({ node: project }) => (
+            {morePosts.map(({ node: project }) => (
               <ProjectCard
                 key={project.slug}
                 name={project.title}
@@ -117,7 +117,7 @@ export default function Index({ allPosts: { edges }, preview }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = await getAllPostsForHome(preview);
+  const allPosts = await getAllPosts(preview);
   return {
     props: { allPosts, preview },
   };
