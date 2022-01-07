@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { getAllPosts } from '../../lib/api';
+import { getAllTags } from '../../lib/api';
 import { formatDateString } from '../../lib/utils';
 
 import projects from '../../data/projects';
@@ -13,10 +14,19 @@ import Cards from '../../components/Cards/Cards';
 import ProjectCard from '../../components/Cards/ProjectCard/ProjectCard';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import Paragraph from '../../components/Paragraph/Paragraph';
+import TagTabs from '../../components/TagTabs/TagTabs';
 
-export default function Portfolio({ allPosts: { edges }, preview }) {
+export default function Portfolio({ allPosts, allTags, preview }) {
+  const posts = allPosts.edges;
+  const tags = allTags.edges;
+
   const router = useRouter();
-  const posts = edges;
+  const [filterTag, setFilterTag] = useState('todos');
+
+  const filteredPosts =
+    filterTag === 'todos'
+      ? posts
+      : posts.filter(({ node }) => node.tags.edges.some(({ node }) => node.name === filterTag));
 
   return (
     <Layout>
@@ -27,9 +37,14 @@ export default function Portfolio({ allPosts: { edges }, preview }) {
         <PageMarker page="casos de estudio" />
         <SectionHeader>Casos de Estudio</SectionHeader>
         <Paragraph>Historias de arquitectura y diseño alrededor del mundo.</Paragraph>
+        <TagTabs
+          tags={tags.map(({ node }) => node.name)}
+          activeTag={filterTag}
+          setActiveTag={setFilterTag}
+        />
         <section>
           <Cards>
-            {posts.map(({ node: project }) => (
+            {filteredPosts.map(({ node: project }) => (
               <ProjectCard
                 key={project.slug}
                 name={project.title}
@@ -56,7 +71,8 @@ export default function Portfolio({ allPosts: { edges }, preview }) {
 
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPosts(preview);
+  const allTags = await getAllTags();
   return {
-    props: { allPosts, preview },
+    props: { allPosts, allTags, preview },
   };
 }
